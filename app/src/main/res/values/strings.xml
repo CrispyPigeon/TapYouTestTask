@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TapYouTestTask</string>
     <string name="start_button">Поехали</string>
+    <string name="start_description">Введите кол-во точек</string>
+    <string name="start_edit_hint">2–10</string>
+    <string name="start_get_points_error">Произошла ошибка получения данных. Попробуйте ещё раз</string>
 </resources>
