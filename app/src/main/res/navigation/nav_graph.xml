@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/tableFragment"
         android:name="com.ds.tapyoutesttask.feature.table.TableFragment"
-        android:label="TableFragment" />
+        android:label="TableFragment" >
+        <argument
+            android:name="points"
+            app:argType="com.ds.tapyoutesttask.domain.model.Point[]" />
+    </fragment>
 </navigation>

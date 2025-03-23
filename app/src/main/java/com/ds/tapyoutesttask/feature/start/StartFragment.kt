@@ -22,7 +22,7 @@ class StartFragment : BaseFragment<FragmentStartBinding, StartViewModel>() {
             val countStr = binding.editTextPoints.text.toString()
             val count = countStr.toIntOrNull()
 
-            if (count == null || count > 10 || count < 2)
+            if (count == null || count > 50 || count < 2)
                 showToastMessage(resources.getString(R.string.start_get_points_validation_error))
             else
                 viewModel.getPoints(count)
@@ -41,7 +41,11 @@ class StartFragment : BaseFragment<FragmentStartBinding, StartViewModel>() {
         }
 
         viewModel.onPointsUpdate.observe(viewLifecycleOwner) {
-            navController.navigate(StartFragmentDirections.actionStartFragmentToTableFragment())
+            navController.navigate(
+                StartFragmentDirections.actionStartFragmentToTableFragment(
+                    it.toTypedArray()
+                )
+            )
         }
 
         viewModel.onError.observe(viewLifecycleOwner) {
