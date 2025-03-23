@@ -18,7 +18,6 @@ class SingleLiveEvent<T>: MutableLiveData<T>() {
             Log.w(TAG, "Multiple observers registered but only one will be notified of changes.")
         }
 
-        // Observe the internal MutableLiveData
         super.observe(owner) { t: T ->
             if (mPending.compareAndSet(true, false)) {
                 observer.onChanged(t)
@@ -32,9 +31,6 @@ class SingleLiveEvent<T>: MutableLiveData<T>() {
         super.setValue(t)
     }
 
-    /**
-     * Used for cases where T is Void, to make calls cleaner.
-     */
     @MainThread
     fun call() {
         value = null

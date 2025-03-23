@@ -13,18 +13,18 @@ class GraphView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     companion object {
-        private val paint = Paint().apply {
-            color = Color.BLUE
-            strokeWidth = 5f
-            style = Paint.Style.STROKE
-        }
-
-        private val axisPaint = Paint().apply {
-            color = Color.BLACK
-            strokeWidth = 3f
-        }
-
         private const val SCALE_FACTOR = 2f
+    }
+
+    private val paint = Paint().apply {
+        color = Color.BLUE
+        strokeWidth = 5f
+        style = Paint.Style.STROKE
+    }
+
+    private val axisPaint = Paint().apply {
+        color = Color.BLACK
+        strokeWidth = 3f
     }
 
     private var points: List<Point> = emptyList()
